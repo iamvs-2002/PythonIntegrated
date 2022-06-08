@@ -18,14 +18,19 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
         }
-        python {
-            buildPython "C:\\Users\\iamvs\\AppData\\Local\\Programs\\Python\\Python310"
+        python{
+            pip{
+                //install "git+https://github.com/python-kasa/python-kasa@8e6cfd003edf9656c1c2b09862b37d96dc8b98d2"
+                install "python-kasa"
+            }
         }
-    }
-
-    sourceSets {
-        main {
-            python.srcDir "src/main/python"
+        sourceSets {
+            main {
+                python.srcDir "src/main/python"
+            }
+        }
+        python {
+            buildPython "C:/Users/iamvs/AppData/Local/Programs/Python/Python310/python.exe"
         }
     }
 
